@@ -9,23 +9,17 @@ import java.util.ArrayList;
 public class Column {
     
     private final String name;
-    private final int value;
     private final Class type;
     private final ArrayList<Number> columnData;
 
-    public Column(String name, int value, Class type) {
+    public Column(String name, Class type) {
         this.name = name;
-        this.value = value;
         this.type = type;
         this.columnData = new ArrayList<>();
     }
 
     public Class getType() {
         return this.type;
-    }
-
-    public int getValue() {
-        return this.value;
     }
 
     @Override

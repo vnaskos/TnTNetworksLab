@@ -29,7 +29,6 @@ public class Table1 extends Table {
         super(
                 tableName,
                 new String[]{"s", "α", "B", "Q"},
-                new int[]{0, 1, 2, 3},
                 new Class[]{Integer.class, Double.class, Double.class, Double.class}
         );
     }

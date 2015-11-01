@@ -15,12 +15,12 @@ public abstract class Table {
         this.columns = new ArrayList<>();
     }
     
-    public Table(String tableName, String[] names, int[] values, Class[] types) {
+    public Table(String tableName, String[] names, Class[] types) {
         this();
         this.tableName = tableName;
         
         for(int i=0; i<names.length; i++) {
-            Column c = new Column(names[i], values[i], types[i]);
+            Column c = new Column(names[i], types[i]);
             columns.add(c);
         }
     }
