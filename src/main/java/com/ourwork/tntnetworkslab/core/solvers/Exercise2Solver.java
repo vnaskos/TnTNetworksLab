@@ -6,7 +6,7 @@ import com.ourwork.tntnetworkslab.core.items.Table2.ColumnOrder;
 
 /**
  *
- * @author Vasilis Naskos
+ * 
  */
 public class Exercise2Solver implements ExerciseSolver {
 
@@ -35,8 +35,8 @@ public class Exercise2Solver implements ExerciseSolver {
                         y = a * (1 - e) / is;
                     } while (Math.abs(anew - a) > 0.001);
                     
-                    sol.getColumn(ColumnOrder.B).setCell(i, e*100);
-                    sol.getColumn(ColumnOrder.Q).setCell(i, y*100);
+                    sol.getColumn(ColumnOrder.B).setCell(i1, e*100);
+                    sol.getColumn(ColumnOrder.Q).setCell(i1, y*100);
 
             }
             
