@@ -30,5 +30,5 @@ public class Exercise1Solver implements ExerciseSolver {
         }
         
         return sol;
-    }
+    }  
 }

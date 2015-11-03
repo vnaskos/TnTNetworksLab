@@ -2,6 +2,7 @@ package com.ourwork.tntnetworkslab.ui;
 
 import com.ourwork.tntnetworkslab.core.items.Table1;
 import com.ourwork.tntnetworkslab.core.items.Table;
+import com.ourwork.tntnetworkslab.core.items.Table2;
 import com.ourwork.tntnetworkslab.core.solvers.Solver;
 import javax.swing.table.DefaultTableModel;
 
@@ -259,6 +260,10 @@ public class TableEditor extends javax.swing.JFrame {
         switch (selectedEx) {
             case 0:
                 t = new Table1(tableName);
+                break;
+            
+            case 1:
+                t = new Table2(tableName);
                 break;
         }
 

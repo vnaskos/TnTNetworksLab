@@ -2,6 +2,7 @@ package com.ourwork.tntnetworkslab.ui;
 
 import com.ourwork.tntnetworkslab.core.items.Table1;
 import com.ourwork.tntnetworkslab.core.items.Table;
+import com.ourwork.tntnetworkslab.core.items.Table2;
 import com.ourwork.tntnetworkslab.graph.GraphMaker;
 import javax.swing.DefaultListModel;
 
@@ -182,7 +183,17 @@ public class TableManager extends javax.swing.JFrame {
                 data[1][j] = t1.getColumn(Table1.ColumnOrder.B).getCell(j);
                 data[2][j] = t1.getColumn(Table1.ColumnOrder.Q).getCell(j);
             }
-        } else {
+        }
+        else if (t instanceof Table2){
+            Table2 t2 = (Table2) t;
+            for(int j=0; j<t2.getRowCount(); j++) {
+                data[0][j] = t2.getColumn(Table2.ColumnOrder.A).getCell(j);
+                data[1][j] = t2.getColumn(Table2.ColumnOrder.B).getCell(j);
+                data[2][j] = t2.getColumn(Table2.ColumnOrder.Q).getCell(j);
+            }
+            
+        }
+        else {
             return;
         }
         

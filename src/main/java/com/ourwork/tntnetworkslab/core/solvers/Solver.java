@@ -2,6 +2,7 @@ package com.ourwork.tntnetworkslab.core.solvers;
 
 import com.ourwork.tntnetworkslab.core.items.Table1;
 import com.ourwork.tntnetworkslab.core.items.Table;
+import com.ourwork.tntnetworkslab.core.items.Table2;
 
 /**
  *
@@ -16,6 +17,11 @@ public class Solver {
             solver = new Exercise1Solver();
             return solver.solve(table);
         }
+        else if(table instanceof Table2) {
+            solver = new Exercise2Solver();
+            return solver.solve(table);
+        }
+        
         
         return null;
     }
