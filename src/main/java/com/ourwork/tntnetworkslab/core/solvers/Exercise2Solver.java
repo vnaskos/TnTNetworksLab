@@ -1,15 +1,24 @@
 package com.ourwork.tntnetworkslab.core.solvers;
 
-public class Exercise2Solver {
+import com.ourwork.tntnetworkslab.core.io.IOArray;
+import com.ourwork.tntnetworkslab.core.io.IOItem;
+import com.ourwork.tntnetworkslab.core.io.IONumeric;
+
+/**
+ * 
+ * @author Vasilis Naskos
+ */
+public class Exercise2Solver implements ExerciseSolver {
     
-    public void solve() {
+    @Override
+    public IOItem solve(IOItem input) {
         double blockingProbability = 0.0;
         double linePerformance;
         double anew;
 
-        int load = 0;//TODO: give value
-        int numberOfLines = 0;//TODO: give value
-        int numberOfSources = 0;//TODO: give value
+        int load = (int) ((IONumeric) input.next()).getValue();
+        int numberOfLines = (int) ((IONumeric) input.next()).getValue();
+        int numberOfSources = (int) ((IONumeric) input.next()).getValue();
 
         do {
             double b = load / (numberOfSources - load * (1 - blockingProbability));
@@ -25,7 +34,15 @@ public class Exercise2Solver {
 
         blockingProbability *= 100;
         linePerformance *= 100;
-        System.out.printf("PITHANOTHTA MPLOKARISMATOS (B)= %.5f %%, APODOSH GRAMMWN (n)= %.5f %%\n", blockingProbability, linePerformance);
+        
+        //System.out.printf("PITHANOTHTA MPLOKARISMATOS (B)= %.5f %%, APODOSH GRAMMWN (n)= %.5f %%\n", blockingProbability, linePerformance);
+        IOItem output = new IOArray(
+                new IOItem[]{
+                    new IONumeric(blockingProbability),
+                    new IONumeric(linePerformance)
+                });
+        
+        return output;
     }
     
 }
