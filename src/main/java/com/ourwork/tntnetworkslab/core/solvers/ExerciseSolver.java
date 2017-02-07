@@ -1,6 +1,6 @@
 package com.ourwork.tntnetworkslab.core.solvers;
 
-import com.ourwork.tntnetworkslab.core.items.Table;
+import com.ourwork.tntnetworkslab.core.io.IOItem;
 
 /**
  *
@@ -8,6 +8,6 @@ import com.ourwork.tntnetworkslab.core.items.Table;
  */
 public interface ExerciseSolver {
     
-    public Table solve(Table data);
+    IOItem solve(IOItem input);
     
 }

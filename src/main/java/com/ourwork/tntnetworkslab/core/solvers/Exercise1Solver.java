@@ -1,34 +1,34 @@
 package com.ourwork.tntnetworkslab.core.solvers;
 
-import com.ourwork.tntnetworkslab.core.items.Table1;
-import com.ourwork.tntnetworkslab.core.items.Table1.ColumnOrder;
-import com.ourwork.tntnetworkslab.core.items.Table;
+import com.ourwork.tntnetworkslab.core.io.IOArray;
+import com.ourwork.tntnetworkslab.core.io.IOItem;
+import com.ourwork.tntnetworkslab.core.io.IONumeric;
 
-/**
- *
- * @author Vasilis Naskos
- */
 public class Exercise1Solver implements ExerciseSolver {
-
+   
     @Override
-    public Table solve(Table table) {
-        Table1 sol = (Table1) table;
-        
-        for(int i=0; i<table.getRowCount(); i++) {
-            int s = (int) sol.getColumn(ColumnOrder.S).getCell(i);
-            
-            double a = (double) sol.getColumn(ColumnOrder.A).getCell(i);
-            double b = 1.0f, q = 0;
-            
-            for (int j = 1; j <= s; j++) {
-                b = (a * b) / (j + a * b);
-                q = (a * (1 - b)) / s;
-            }
-            
-            sol.getColumn(ColumnOrder.B).setCell(i, b*100);
-            sol.getColumn(ColumnOrder.Q).setCell(i, q*100);
+    public IOItem solve(IOItem input) {
+        float blockingProbability = 1.0F;
+        float linePerformance = 0;
+
+        int numberOfLines = (int) ((IONumeric) input.next()).getValue();
+        int load = (int) ((IONumeric) input.next()).getValue();
+
+        for(int i = 1; i <= numberOfLines; i++) {
+            blockingProbability = (load * blockingProbability) / (i + load * blockingProbability);
+            linePerformance = (load * (1 - blockingProbability)) / numberOfLines;
         }
         
-        return sol;
-    }  
+        blockingProbability *= 100;
+        linePerformance *= 100;
+        
+        IOItem output = new IOArray(
+                new IOItem[] {
+                    new IONumeric(blockingProbability),
+                    new IONumeric(linePerformance)
+                });
+        
+        return output;
+    }
+    
 }
