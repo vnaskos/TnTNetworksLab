@@ -35,7 +35,6 @@ public class Exercise2Solver implements ExerciseSolver {
         blockingProbability *= 100;
         linePerformance *= 100;
         
-        //System.out.printf("PITHANOTHTA MPLOKARISMATOS (B)= %.5f %%, APODOSH GRAMMWN (n)= %.5f %%\n", blockingProbability, linePerformance);
         IOItem output = new IOArray(
                 new IOItem[]{
                     new IONumeric(blockingProbability),
