@@ -16,9 +16,9 @@ public class Exercise2Solver implements ExerciseSolver {
         double linePerformance;
         double anew;
 
-        int load = (int) ((IONumeric) input.next()).getValue();
-        int numberOfLines = (int) ((IONumeric) input.next()).getValue();
-        int numberOfSources = (int) ((IONumeric) input.next()).getValue();
+        int load = ((IONumeric) input.next()).getInt();
+        int numberOfLines = ((IONumeric) input.next()).getInt();
+        int numberOfSources = ((IONumeric) input.next()).getInt();
 
         do {
             double b = load / (numberOfSources - load * (1 - blockingProbability));

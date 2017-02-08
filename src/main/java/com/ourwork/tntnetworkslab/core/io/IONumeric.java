@@ -17,6 +17,14 @@ public class IONumeric<T> implements IOItem {
         return value;
     }
 
+    public int getInt() {
+        return Integer.parseInt(value.toString());
+    }
+    
+    public float getFloat() {
+        return Float.parseFloat(value.toString());
+    }
+    
     public void setValue(T value) {
         this.value = value;
     }

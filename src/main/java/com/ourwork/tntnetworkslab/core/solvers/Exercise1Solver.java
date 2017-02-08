@@ -11,8 +11,8 @@ public class Exercise1Solver implements ExerciseSolver {
         float blockingProbability = 1.0F;
         float linePerformance = 0;
 
-        int numberOfLines = (int) ((IONumeric) input.next()).getValue();
-        int load = (int) ((IONumeric) input.next()).getValue();
+        int numberOfLines = ((IONumeric) input.next()).getInt();
+        int load = ((IONumeric) input.next()).getInt();
 
         for(int i = 1; i <= numberOfLines; i++) {
             blockingProbability = (load * blockingProbability) / (i + load * blockingProbability);
